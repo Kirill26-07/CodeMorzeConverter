@@ -1,12 +1,11 @@
 package codeMaps;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
     public class CodeMortheMap {
 
-        public final static HashMap CodeArray() {
+        private final static HashMap CodeArray() {
 
           Map<Character, String> map = new HashMap<>();
 
