@@ -5,9 +5,9 @@ import java.util.Map;
 
     public class CodeMortheMap {
 
-        private final static HashMap CodeArray() {
+     private static Map<Character, String> map = new HashMap<>();
 
-          Map<Character, String> map = new HashMap<>();
+        private CodeMortheMap() {
 
             // Строчные буквы RUS
 
@@ -141,7 +141,12 @@ import java.util.Map;
             map.put('W', "..--");
             map.put('Z', "-...");
 
-            return (HashMap) map;
         }
+
+      public static Map<Character, String> getMap() {
+        CodeMortheMap codeMortheMap = new CodeMortheMap();
+        return map;
+      }
+
     }
 
