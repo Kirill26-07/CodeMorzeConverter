@@ -1,14 +1,16 @@
 package converter;
 
 import codeMaps.CodeMortheMap;
+import view.OutputResult;
 
 import java.util.Map;
 
 public class ToCode {
 
-    static String code = new String();
+     String code = new String();
 
-    public static void converterFromTextToCode(char[] text){
+    public void converterFromTextToCode(char[] text){
+        OutputResult outputResult = new OutputResult();
 
         Map<Character, String> map = CodeMortheMap.getMap();
 
@@ -17,7 +19,7 @@ public class ToCode {
             code = code + (map.get(val) + " ");
         }
 
-        System.out.println(code);
+        outputResult.printResult(code);
     }
 
 }

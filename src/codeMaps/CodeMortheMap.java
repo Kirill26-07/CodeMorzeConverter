@@ -12,23 +12,14 @@ import java.util.Map;
             // Строчные буквы RUS
 
             map.put('а', ".-");
-            map.put('.', "......");
             map.put('в', ".--");
-            map.put(',', ".-.-.-");
             map.put('г', "--.");
-            map.put(';', "-.-.-.");
             map.put('д', "-..");
-            map.put(':', "---...");
             map.put('е', ".");
-            map.put('?', "..--..");
             map.put('ж', "...-");
-            map.put('!', "--..--");
             map.put('з', "--..");
-            map.put('(', "-.--.-");
             map.put('и', "..");
-            map.put(')', "-.--.-");
             map.put('к', "-.-");
-            map.put('"', ".-..-.");
             map.put('л', ".-..");
             map.put('м', "--");
             map.put('н', "-.");
@@ -50,7 +41,6 @@ import java.util.Map;
             map.put('ю', "..--");
             map.put('б', "-...");
             map.put('я', ".-.-");
-            map.put(' ', "|");
 
             // Заглавные буквы RUS
 
@@ -93,7 +83,7 @@ import java.util.Map;
             map.put('g', "--..");           map.put('(', "-.--.-");
             map.put('h', "..");             map.put(')', "-.--.-");
             map.put('i', "-.-");            map.put('"', ".-..-.");
-            map.put('g', ".-..");
+            map.put('j', ".-..");
             map.put('k', "--");
             map.put('l', "-.");
             map.put('m', "----");
@@ -147,6 +137,5 @@ import java.util.Map;
         CodeMortheMap codeMortheMap = new CodeMortheMap();
         return map;
       }
-
     }
 

@@ -10,11 +10,12 @@ import java.io.InputStreamReader;
 public class InputText{
 
         public void inputYouText() throws IOException {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            ToCode toCode = new ToCode();
+
             System.out.println("Input your text:");
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
             char[] text = bufferedReader.readLine().toCharArray();
-            ToCode.converterFromTextToCode(text);
+            toCode.converterFromTextToCode(text);
         }
 }
