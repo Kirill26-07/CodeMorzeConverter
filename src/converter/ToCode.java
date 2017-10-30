@@ -14,9 +14,8 @@ public class ToCode {
 
         Map<Character, String> map = CodeMortheMap.getMap();
 
-        for(int i = 0; i < text.length; i++){
-            char val = text[i];
-            code = code + (map.get(val) + " ");
+        for(char i : text){
+            code = code + (map.get(i) + " ");
         }
 
         outputResult.printResult(code);
