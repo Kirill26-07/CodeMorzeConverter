@@ -2,28 +2,36 @@ package view;
 
 import controllers.InputCode;
 import controllers.InputText;
+import converter.ToText;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Settings {
 
-    private static final int TEXT_INPUT = 1;
-    private static final int CODE_INPUT = 2;
-    private static final int EXIT = 0;
+    private static final String TEXT_INPUT = "1";
+    private static final String CODE_INPUT = "2";
+    private static final String EXIT = "0";
+
+    Scanner scanner = new Scanner(System.in);
+    InputText inputText = new InputText();
+    InputCode inputCode = new InputCode();
 
     public final void startGame() throws IOException {
 
-        Scanner scanner = new Scanner(System.in);
-        InputText inputText = new InputText();
-        InputCode inputCode = new InputCode();
-
-        int youChoice;
-
-        do {
+        String youChoice;
+        String lang;
 
         System.out.println("Для конвертации из текста в код нажмите 1. \nДля конвертации из кода в текс нажмите 2. \nДля отмены нажмите 0.");
-        youChoice = scanner.nextInt();
+        youChoice = scanner.nextLine();
+
+        if(youChoice.equals(CODE_INPUT)) {
+            System.out.println("На каком языке выводить текст?\n 1 - RUS\n 2 - ENG:");
+
+            lang = scanner.nextLine();
+
+            ToText.WHAT_LANG = lang;
+        }
 
             switch (youChoice) {
                 case TEXT_INPUT: {
@@ -40,9 +48,8 @@ public class Settings {
                 }
                 default: {
                     System.out.println("Вы ввели неверное значение!!! Повторите ввод: \n");
+                    startGame();
                 }
             }
         }
-        while (youChoice !=1 && youChoice !=2 && youChoice !=0);
     }
-}

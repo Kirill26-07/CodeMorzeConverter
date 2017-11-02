@@ -3,44 +3,12 @@ package codeMaps;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DecodingMap {
+public class DecodingMapENG {
 
     private static Map<String, String> map = new HashMap<>();
 
-    private DecodingMap() {
 
-        // Строчные буквы RUS
-
-        map.put(".-", "а");
-        map.put(".--", "в");
-        map.put("--.", "г");
-        map.put("-..", "д");
-        map.put(".", "е");
-        map.put("...-", "ж");
-        map.put("--..", "з");
-        map.put("..", "и");
-        map.put("-.-", "к");
-        map.put(".-..", "л");
-        map.put("--", "м");
-        map.put("-.", "н");
-        map.put("----", "о");
-        map.put(".--.", "п");
-        map.put(".-.", "р");
-        map.put("...", "с");
-        map.put("-", "т");
-        map.put("..-", "у");
-        map.put("..-.", "ф");
-        map.put("....", "х");
-        map.put("-.-.", "ц");
-        map.put("----", "ш");
-        map.put("--.-", "щ");
-        map.put("-..-", "ь");
-        map.put("-.--", "ы");
-        map.put("-..-", "ъ");
-        map.put("..-..", "э");
-        map.put("..--", "ю");
-        map.put("-...", "б");
-        map.put(".-.-", "я");
+    private DecodingMapENG() {
 
         // Строчные буквы ENG                  // Cимволы
 
@@ -70,15 +38,14 @@ public class DecodingMap {
         map.put("-..-", "x");
         map.put("-.--", "y");
         map.put("-..-", "z");
-        map.put("  ", " ");
         map.put(" ", "");
+        map.put("|", " ");
 
     }
 
-    public static Map<String, String> getMap() {
-
-        DecodingMap decodingMap = new DecodingMap();
-
+    public static Map<String, String> getMapENG() {
+        DecodingMapENG decodingMapENG = new DecodingMapENG();
         return map;
     }
 }
+
