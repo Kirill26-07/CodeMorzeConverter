@@ -3,7 +3,7 @@ package codeMaps;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DecodingMapENG {
+public final class DecodingMapENG {
 
     private static Map<String, String> map = new HashMap<>();
 

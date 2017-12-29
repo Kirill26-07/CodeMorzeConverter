@@ -14,14 +14,14 @@ public class ToText {
     private static final String CONVERT_TO_ENG = "2";
     private static String text = new String();
 
-    public static void getConverter(String[] code){
+    public static void getConverter(final String[] code){
 
         ToText toText = new ToText();
 
         toText.converterFromCodeToText(code);
     }
 
-    private void converterFromCodeToText(String[] code){
+    private void converterFromCodeToText(final String[] code){
 
         OutputResult outputResult = new OutputResult();
 

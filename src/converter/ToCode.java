@@ -9,7 +9,7 @@ public class ToCode {
 
     private static String code = new String();
 
-    private static void converterFromTextToCode(char[] text){
+    private static void converterFromTextToCode(final char[] text){
         OutputResult outputResult = new OutputResult();
 
         Map<Character, String> map = CodeMortheMap.getMap();
@@ -22,7 +22,7 @@ public class ToCode {
         outputResult.printResult(code);
     }
 
-    public static void getConverter(char[] text){
+    public static void getConverter(final char[] text){
         converterFromTextToCode(text);
     }
 
