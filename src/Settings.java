@@ -10,8 +10,6 @@ public class Settings {
 
     private final Reader input = new Reader();
     private final Printer output = new Printer();
-    private final InputText inputText = new InputText();
-    private final InputCode inputCode = new InputCode();
 
     public final void startGame() throws IOException {
 
@@ -19,21 +17,23 @@ public class Settings {
         final String CODE_INPUT = "2";
         final String EXIT = "0";
 
-        output.printer("Для конвертации из текста в код нажмите 1. \nДля конвертации из кода в текс нажмите 2. \nДля отмены нажмите 0.");
+        output.printer("For convert from text to code input - 1. \nFor convert from code to text input - 2. \nExit - input 0.");
         String youChoice = input.reader();
 
         if(youChoice.equals(CODE_INPUT)) {
-            output.printer("На каком языке выводить текст?\n 1 - RUS\n 2 - ENG:");
+            output.printer("Language of output text \n 1 - RUS\n 2 - ENG:");
 
             ToText.WHAT_LANG = input.reader();
         }
 
             switch (youChoice) {
                 case TEXT_INPUT: {
+                    final InputText inputText = new InputText();
                     inputText.inputYouText();
                     break;
                 }
                 case CODE_INPUT: {
+                    final InputCode inputCode = new InputCode();
                     inputCode.inputYouCode();
                     break;
                 }
@@ -48,7 +48,7 @@ public class Settings {
         }
 
         private void wrongValue(){
-            output.printer("Вы ввели неверное значение!!! Повторите ввод: \n");
+            output.printer("You input wrong value, please try again: \n");
             try {
                 startGame();
             }

@@ -1,5 +1,3 @@
-import view.Settings;
-
 import java.io.IOException;
 
 public class Main {

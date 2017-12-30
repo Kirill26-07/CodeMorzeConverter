@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.output.Printer;
 import converter.ToCode;
 
 import java.io.BufferedReader;
@@ -10,13 +11,14 @@ public class InputText{
 
         public void inputYouText() throws IOException {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            Printer printer = new Printer();
 
-            System.out.println("Input your text:");
+            printer.printer("Input your text:");
 
             char[] text = bufferedReader.readLine().toCharArray();
 
             bufferedReader.close();
 
-            ToCode.getConverter(text);
+            ToCode.converterFromTextToCode(text);
         }
 }

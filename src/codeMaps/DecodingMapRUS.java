@@ -24,7 +24,6 @@ public class DecodingMapRUS {
         map.put(".-..", "л");
         map.put("--", "м");
         map.put("-.", "н");
-        map.put("----", "о");
         map.put(".--.", "п");
         map.put(".-.", "р");
         map.put("...", "с");
@@ -35,7 +34,6 @@ public class DecodingMapRUS {
         map.put("-.-.", "ц");
         map.put("----", "ш");
         map.put("--.-", "щ");
-        map.put("-..-", "ь");
         map.put("-.--", "ы");
         map.put("-..-", "ъ");
         map.put("..-..", "э");
@@ -53,8 +51,6 @@ public class DecodingMapRUS {
         map.put("---...", ":");
         map.put("..--..", "?");
         map.put("--..--", "!");
-        map.put("-.--.-", "(");
-        map.put("-.--.-", ")");
         map.put(".-..-.", "'");
 
 

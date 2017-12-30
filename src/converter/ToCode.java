@@ -1,29 +1,24 @@
 package converter;
 
 import codeMaps.CodeMortheMap;
-import view.OutputResult;
+import controllers.output.Printer;
 
 import java.util.Map;
 
 public class ToCode {
 
-    private static String code = new String();
+    private static String code;
 
-    private static void converterFromTextToCode(final char[] text){
-        OutputResult outputResult = new OutputResult();
+    public static void converterFromTextToCode(final char[] text) {
 
         Map<Character, String> map = CodeMortheMap.getMap();
 
-        for(char i : text){
+        for (char i : text) {
 
             code = code + (map.get(i) + " ");
         }
 
-        outputResult.printResult(code);
+        Printer printer = new Printer();
+        printer.printer(code);
     }
-
-    public static void getConverter(final char[] text){
-        converterFromTextToCode(text);
-    }
-
 }

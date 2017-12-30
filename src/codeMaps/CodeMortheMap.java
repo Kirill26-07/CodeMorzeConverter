@@ -1,13 +1,12 @@
 package codeMaps;
 
 import java.util.HashMap;
-import java.util.Map;
 
-    public class CodeMortheMap {
+public class CodeMortheMap {
 
-     private static Map<Character, String> map = new HashMap<>();
+     private static HashMap<Character, String> map = new HashMap<>();
 
-        private CodeMortheMap() {
+         CodeMortheMap() {
 
             // Строчные буквы RUS
 
@@ -128,13 +127,13 @@ import java.util.Map;
             map.put('V', "----");
             map.put('W', "--.-");
             map.put('X', "..-..");
-            map.put('W', "..--");
+            map.put('Y', "..--");
             map.put('Z', "-...");
 
         }
 
-      public static Map<Character, String> getMap() {
-        CodeMortheMap codeMortheMap = new CodeMortheMap();
+      public static HashMap<Character, String> getMap() {
+        new CodeMortheMap();
         return map;
       }
     }

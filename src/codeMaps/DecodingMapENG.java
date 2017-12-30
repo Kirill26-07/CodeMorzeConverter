@@ -18,13 +18,12 @@ public final class DecodingMapENG {
         map.put("-..", "d");            map.put("---...", ":");
         map.put(".", "e");              map.put("..--..", "?");
         map.put("...-", "f");           map.put("--..--", "!");
-        map.put("--..", "g");           map.put("-.--.-", "(");
-        map.put("..", "h");             map.put("-.--.-", ")");
-        map.put("-.-", "i");            map.put(".-..-.", "'");
+        map.put("--..", "g");           map.put(".-..-.", "'");
+        map.put("..", "h");
+        map.put("-.-", "i");
         map.put(".-..", "j");
         map.put("--", "k");
         map.put("-.", "l");
-        map.put("----", "m");
         map.put(".--.", "n");
         map.put(".-.", "o");
         map.put("...", "p");
@@ -35,7 +34,6 @@ public final class DecodingMapENG {
         map.put("-.-.", "u");
         map.put("----", "v");
         map.put("--.-", "w");
-        map.put("-..-", "x");
         map.put("-.--", "y");
         map.put("-..-", "z");
         map.put(" ", "");
@@ -44,7 +42,7 @@ public final class DecodingMapENG {
     }
 
     public static Map<String, String> getMapENG() {
-        DecodingMapENG decodingMapENG = new DecodingMapENG();
+        new DecodingMapENG();
         return map;
     }
 }

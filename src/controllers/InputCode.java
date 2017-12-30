@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.output.Printer;
 import converter.ToText;
 
 import java.io.BufferedReader;
@@ -11,8 +12,9 @@ public class InputCode {
     public void inputYouCode() throws  IOException{
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        Printer printer = new Printer();
 
-        System.out.println("Input your code in space:\n Используйте пробел для резделения кода!\n Используйте символ | для разделения слов!");
+        printer.printer("Input your code in space:\n Используйте пробел для резделения кода!\n Используйте символ | для разделения слов!");
 
         String[] inputeCode = bufferedReader.readLine().split(" ");
 

@@ -2,7 +2,7 @@ package converter;
 
 import codeMaps.DecodingMapENG;
 import codeMaps.DecodingMapRUS;
-import view.OutputResult;
+import controllers.output.Printer;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ public class ToText {
 
     private static final String CONVERT_TO_RUS = "1";
     private static final String CONVERT_TO_ENG = "2";
-    private static String text = new String();
+    private static String text;
 
     public static void getConverter(final String[] code){
 
@@ -22,8 +22,6 @@ public class ToText {
     }
 
     private void converterFromCodeToText(final String[] code){
-
-        OutputResult outputResult = new OutputResult();
 
         Map<String, String> map = null;
         
@@ -38,6 +36,7 @@ public class ToText {
             text = text + (map.get(i));
         }
 
-        outputResult.printResult(text);
+        Printer printer = new Printer();
+        printer.printer(text);
     }
 }
