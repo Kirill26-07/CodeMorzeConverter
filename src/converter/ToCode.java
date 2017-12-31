@@ -1,6 +1,6 @@
 package converter;
 
-import codeMaps.CodeMortheMap;
+import codeMaps.CodeMortheMapRUS;
 import controllers.output.Printer;
 
 import java.util.Map;
@@ -11,7 +11,7 @@ public class ToCode {
 
     public static void converterFromTextToCode(final char[] text) {
 
-        Map<Character, String> map = CodeMortheMap.getMap();
+        Map<Character, String> map = CodeMortheMapRUS.getMap();
 
         for (char i : text) {
 

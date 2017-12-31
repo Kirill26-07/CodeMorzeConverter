@@ -1,42 +1,53 @@
 package converter;
 
-import codeMaps.DecodingMapENG;
-import codeMaps.DecodingMapRUS;
+import codeMaps.CodeMortheMapENG;
+import codeMaps.CodeMortheMapRUS;
 import controllers.output.Printer;
-
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ToText {
 
-    public static String WHAT_LANG;
 
-    private static final String CONVERT_TO_RUS = "1";
-    private static final String CONVERT_TO_ENG = "2";
-    private static String text;
+    private final String CONVERT_LANG;
+    private String text = "";
+    private HashMap<Character, String> map = new HashMap<>();
 
-    public static void getConverter(final String[] code){
+    public ToText(String lang) {
+        this.CONVERT_LANG = lang;
+    }
 
-        ToText toText = new ToText();
-
-        toText.converterFromCodeToText(code);
+    public void getConverter(final String[] code){
+        converterFromCodeToText(code);
     }
 
     private void converterFromCodeToText(final String[] code){
+        converterLangSettings();
 
-        Map<String, String> map = null;
-        
-        if(WHAT_LANG.equals(CONVERT_TO_RUS)){
-           map = DecodingMapRUS.getMapRUS();
-        }
-        else if(WHAT_LANG.equals(CONVERT_TO_ENG)){
-            map = DecodingMapENG.getMapENG();
-        }
+        Set<Map.Entry<Character, String>> entries = map.entrySet();
 
         for(String i : code){
-            text = text + (map.get(i));
+           for(Map.Entry<Character, String> pair : entries){
+               if(i.equals(pair.getValue())){
+                   text = text + pair.getKey();
+               }
+           }
         }
 
         Printer printer = new Printer();
         printer.printer(text);
+    }
+
+    private void converterLangSettings(){
+
+        if(CONVERT_LANG.equals("rus")){
+            map = CodeMortheMapRUS.getMap();
+        }
+        else if(CONVERT_LANG.equals("eng")){
+            map = CodeMortheMapENG.getMap();
+        }
+
+
     }
 }

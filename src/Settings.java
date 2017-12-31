@@ -20,11 +20,6 @@ public class Settings {
         output.printer("For convert from text to code input - 1. \nFor convert from code to text input - 2. \nExit - input 0.");
         String youChoice = input.reader();
 
-        if(youChoice.equals(CODE_INPUT)) {
-            output.printer("Language of output text \n 1 - RUS\n 2 - ENG:");
-
-            ToText.WHAT_LANG = input.reader();
-        }
 
             switch (youChoice) {
                 case TEXT_INPUT: {
