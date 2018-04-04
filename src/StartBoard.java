@@ -1,17 +1,18 @@
+/**
+ * Класс задающий предварительные настройки конвертации
+ */
 import controllers.InputCode;
 import controllers.InputText;
 import controllers.input.Reader;
 import controllers.output.Printer;
-import converter.ToText;
-
 import java.io.IOException;
 
-public class Settings {
+public class StartBoard {
 
     private final Reader input = new Reader();
     private final Printer output = new Printer();
 
-    public final void startGame() throws IOException {
+    final void startConvert() throws IOException {
 
         final String TEXT_INPUT = "1";
         final String CODE_INPUT = "2";
@@ -19,7 +20,6 @@ public class Settings {
 
         output.printer("For convert from text to code input - 1. \nFor convert from code to text input - 2. \nExit - input 0.");
         String youChoice = input.reader();
-
 
             switch (youChoice) {
                 case TEXT_INPUT: {
@@ -45,7 +45,7 @@ public class Settings {
         private void wrongValue(){
             output.printer("You input wrong value, please try again: \n");
             try {
-                startGame();
+                startConvert();
             }
             catch (IOException e){
                 e.printStackTrace();

@@ -1,3 +1,6 @@
+/**
+ * Создаем HashMap для Русского алфавита
+ */
 package codeMaps;
 
 import java.util.HashMap;
@@ -6,7 +9,7 @@ public class CodeMortheMapRUS {
 
      private static HashMap<Character, String> map = new HashMap<>();
 
-         CodeMortheMapRUS() {
+     private CodeMortheMapRUS() {
 
             // Строчные буквы RUS
 

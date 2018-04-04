@@ -1,3 +1,7 @@
+/**
+ * Класс принимающий и обрабатывающий текст для конвертации
+ */
+
 package controllers;
 
 import controllers.output.Printer;
@@ -7,7 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class InputText{
+public class InputText {
 
         public void inputYouText() throws IOException {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

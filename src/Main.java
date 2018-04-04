@@ -3,8 +3,8 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Settings settings = new Settings();
+        StartBoard startBoard = new StartBoard();
 
-        settings.startGame();
+        startBoard.startConvert();
     }
 }

@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-class CodeMortheMapRUSTest {
+class CodeMortheMapTest {
 
     @Test
     void getMap() {
 
-        HashMap<Character, String> map = CodeMortheMapRUS.getMap();
+        HashMap<Character, String> map = CodeMortheMapENG.getMap();
 
         Set<Map.Entry<Character, String>> entries = map.entrySet();
 
-        Character val = 'W';
+        Character val = 'w';
         String val1 = "--.-";
 
         for (Map.Entry<Character, String> pair : entries){

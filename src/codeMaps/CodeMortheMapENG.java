@@ -1,3 +1,6 @@
+/**
+ * Создаем HashMap для Английского алфавита
+ */
 package codeMaps;
 
 import java.util.HashMap;
@@ -6,7 +9,7 @@ public class CodeMortheMapENG {
 
      private static HashMap<Character, String> map = new HashMap<>();
 
-         CodeMortheMapENG() {
+     private CodeMortheMapENG() {
 
             // Строчные буквы ENG                  // Cимволы
 

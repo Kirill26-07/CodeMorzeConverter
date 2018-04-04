@@ -1,8 +1,11 @@
+/**
+ * Класс конвертирующий текст в код
+ */
+
 package converter;
 
 import codeMaps.CodeMortheMapRUS;
 import controllers.output.Printer;
-
 import java.util.Map;
 
 public class ToCode {
@@ -15,7 +18,7 @@ public class ToCode {
 
         for (char i : text) {
 
-            code = code + (map.get(i) + " ");
+            code += (map.get(i) + " ");
         }
 
         Printer printer = new Printer();
