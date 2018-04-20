@@ -10,7 +10,6 @@ public class CodeMortheMapENG {
      private static HashMap<Character, String> map = new HashMap<>();
 
      private CodeMortheMapENG() {
-
             // Строчные буквы ENG                  // Cимволы
 
             map.put('a', ".-");             map.put('.', "......");

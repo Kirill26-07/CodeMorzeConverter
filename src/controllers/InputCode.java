@@ -16,8 +16,7 @@ public class InputCode {
     private final Printer printer = new Printer();
     private final Reader reader = new Reader();
 
-    public void inputYouCode() throws IOException{
-
+    public void inputYouCode() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         printer.printer("Write Language of output text\n RUS - RUSSIAN\n ENG - ENGLISH:");
@@ -33,11 +32,10 @@ public class InputCode {
         toText.converterFromCodeToText(inputCode);
     }
 
-    private void wrongInput(final String lang) throws IOException{
-        if(lang.equals("rus") || lang.equals("eng")){
+    private void wrongInput(final String lang) throws IOException {
+        if (lang.equals("rus") || lang.equals("eng")) {
             return;
-        }
-        else {
+        } else {
             printer.printer("You input wrong value, please try again!");
             inputYouCode();
         }

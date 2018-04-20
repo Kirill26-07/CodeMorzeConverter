@@ -20,7 +20,6 @@ public class ToText {
     }
 
     public void converterFromCodeToText(final String[] code) {
-
         getLangMap();
 
         Set<Map.Entry<Character, String>> entries = map.entrySet();
@@ -33,17 +32,14 @@ public class ToText {
                }
            }
         }
-
         Printer printer = new Printer();
         printer.printer(text);
     }
 
     private void getLangMap(){
-
-        if(CONVERT_LANG.equals("rus")){
+        if (CONVERT_LANG.equals("rus")) {
             map = CodeMortheMapRUS.getMap();
-        }
-        else if(CONVERT_LANG.equals("eng")){
+        } else if (CONVERT_LANG.equals("eng")) {
             map = CodeMortheMapENG.getMap();
         }
     }
