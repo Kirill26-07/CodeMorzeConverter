@@ -2,19 +2,24 @@
  * Класс принимающий и обрабатывающий код для конвертации
  */
 package controllers;
-
-import controllers.input.Reader;
-import controllers.output.Printer;
-import converter.ToText;
-
+import controllers.converter.IToTextConverter;
+import controllers.output.IPrinter;
+import view.IReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class InputCode {
 
-    private final Printer printer = new Printer();
-    private final Reader reader = new Reader();
+    private final IPrinter printer;
+    private final IReader reader;
+    private final IToTextConverter toText;
+
+    public InputCode(final IPrinter printer, final IReader reader, IToTextConverter toText) {
+        this.printer = printer;
+        this.reader = reader;
+        this.toText = toText;
+    }
 
     public void inputYouCode() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -27,8 +32,6 @@ public class InputCode {
         printer.printer("Input your code in space:\n Используйте пробел для резделения кода!\n Используйте символ | для разделения слов!");
         String[] inputCode = bufferedReader.readLine().split(" ");
         bufferedReader.close();
-
-        ToText toText = new ToText(lang);
         toText.converterFromCodeToText(inputCode);
     }
 

@@ -1,7 +1,7 @@
 /**
  * Создаем HashMap для Английского алфавита
  */
-package codeMaps;
+package model;
 
 import java.util.HashMap;
 
@@ -42,7 +42,7 @@ public class CodeMortheMapENG {
 
         }
 
-     public static HashMap<Character, String> getMap() {
+     public HashMap<Character, String> getMap() {
         new CodeMortheMapENG();
         return map;
       }

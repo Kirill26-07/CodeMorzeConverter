@@ -1,4 +1,4 @@
-package controllers.input;
+package view;
 
 public interface IReader {
     String reader();

@@ -1,7 +1,7 @@
 /**
  * Создаем HashMap для Русского алфавита
  */
-package codeMaps;
+package model;
 
 import java.util.HashMap;
 
@@ -57,7 +57,7 @@ public class CodeMortheMapRUS {
 
         }
 
-      public static HashMap<Character, String> getMap() {
+      public HashMap<Character, String> getMap() {
         new CodeMortheMapRUS();
         return map;
       }

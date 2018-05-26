@@ -2,18 +2,22 @@
  * Класс конвертирующий текст в код
  */
 
-package converter;
-
-import codeMaps.CodeMortheMapRUS;
+package controllers.converter;
+import model.CodeMortheMapRUS;
 import controllers.output.Printer;
 import java.util.Map;
 
 public class ToCode {
 
+    private final CodeMortheMapRUS mapRUS;
     private static String code;
 
-    public static void converterFromTextToCode(final char[] text) {
-        Map<Character, String> map = CodeMortheMapRUS.getMap();
+    public ToCode(final CodeMortheMapRUS mapRUS) {
+        this.mapRUS = mapRUS;
+    }
+
+    public void converterFromTextToCode(final char[] text) {
+        Map<Character, String> map = mapRUS.getMap();
 
         for (char i : text) {
             code += (map.get(i) + " ");

@@ -3,17 +3,21 @@
  */
 import controllers.InputCode;
 import controllers.InputText;
-import controllers.input.Reader;
-import controllers.output.Printer;
+import controllers.output.IPrinter;
+import view.IReader;
 import java.io.IOException;
 
-public class StartBoard {
+public class StartBoard implements ISimpleBoard{
 
-    private final Reader input = new Reader();
-    private final Printer output = new Printer();
+    private final IReader input;
+    private final IPrinter output;
 
-    final void startConvert() throws IOException {
+    public StartBoard(final IReader input, final IPrinter output) {
+        this.input = input;
+        this.output = output;
+    }
 
+    final public void startConverting() throws IOException {
         final String TEXT_INPUT = "1";
         final String CODE_INPUT = "2";
         final String EXIT = "0";
@@ -23,12 +27,12 @@ public class StartBoard {
 
          switch (youChoice) {
              case TEXT_INPUT: {
-                 final InputText inputText = new InputText();
+                 final InputText inputText = new InputText(converter);
                  inputText.inputYouText();
                  break;
              }
              case CODE_INPUT: {
-                 final InputCode inputCode = new InputCode();
+                 final InputCode inputCode = new InputCode(printer, reader, toText);
                  inputCode.inputYouCode();
                  break;
              }
@@ -45,7 +49,7 @@ public class StartBoard {
     private void wrongValue() {
        output.printer("You input wrong value, please try again: \n");
        try {
-           startConvert();
+           startConverting();
        } catch (IOException e) {
            e.printStackTrace();
        }

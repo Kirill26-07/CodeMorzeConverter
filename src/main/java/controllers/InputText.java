@@ -3,25 +3,31 @@
  */
 
 package controllers;
-
+import controllers.converter.IToCodeConverter;
+import controllers.output.IPrinter;
 import controllers.output.Printer;
-import converter.ToCode;
+import controllers.converter.ToCode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class InputText {
 
-        public void inputYouText() throws IOException {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            Printer printer = new Printer();
+    private final IToCodeConverter converter;
+    private final IPrinter printer;
 
-            printer.printer("Input your text:");
+    public InputText(final IToCodeConverter converter, final IPrinter printer) {
+        this.converter = converter;
+        this.printer = printer;
+    }
 
-            char[] text = bufferedReader.readLine().toCharArray();
+    public void inputYouText() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        printer.printer("Input your text:");
 
-            bufferedReader.close();
+        char[] text = bufferedReader.readLine().toCharArray();
 
-            ToCode.converterFromTextToCode(text);
-        }
+        bufferedReader.close();
+        converter.converterFromTextToCode(text);
+    }
 }
