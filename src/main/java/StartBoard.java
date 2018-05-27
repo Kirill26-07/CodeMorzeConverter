@@ -14,7 +14,7 @@ public class StartBoard implements ISimpleBoard{
     private final InputText inputText;
     private final InputCode inputCode;
 
-    public StartBoard(final IReader input, final IPrinter output, InputText inputText, InputCode inputCode) {
+    public StartBoard(final IReader input, final IPrinter output, final InputText inputText, final InputCode inputCode) {
         this.input = input;
         this.output = output;
         this.inputText = inputText;

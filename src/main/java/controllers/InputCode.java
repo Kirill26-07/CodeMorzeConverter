@@ -15,7 +15,7 @@ public class InputCode {
     private final IReader reader;
     private final IToTextConverter toText;
 
-    public InputCode(final IPrinter printer, final IReader reader, IToTextConverter toText) {
+    public InputCode(final IPrinter printer, final IReader reader, final IToTextConverter toText) {
         this.printer = printer;
         this.reader = reader;
         this.toText = toText;
