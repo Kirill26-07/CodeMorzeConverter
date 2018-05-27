@@ -2,32 +2,31 @@
  * Класс конвертирующий код в текст
  */
 package controllers.converter;
+
 import controllers.output.IPrinter;
 import model.CodeMortheMapENG;
 import model.CodeMortheMapRUS;
-import controllers.output.Printer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class ToText {
+public class ToText implements IToTextConverter {
 
     private final CodeMortheMapRUS mapRUS;
     private final CodeMortheMapENG mapENG;
     private final IPrinter printer;
 
-    private final String CONVERT_LANG;
     private HashMap<Character, String> map = new HashMap<>();
 
-    public ToText(final String lang, final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
-        this.CONVERT_LANG = lang;
+    public ToText(final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
         this.mapRUS = mapRUS;
         this.mapENG = mapENG;
         this.printer = printer;
     }
 
-    public void converterFromCodeToText(final String[] code) {
-        getLangMap();
+    @Override
+    public void converterFromCodeToText(final String[] code, final String lang) {
+        getLangMap(lang);
 
         Set<Map.Entry<Character, String>> entries = map.entrySet();
 
@@ -42,10 +41,10 @@ public class ToText {
         printer.printer(text);
     }
 
-    private void getLangMap(){
-        if (CONVERT_LANG.equals("rus")) {
+    private void getLangMap(final String lang){
+        if (lang.equals("rus")) {
             map = mapRUS.getMap();
-        } else if (CONVERT_LANG.equals("eng")) {
+        } else if (lang.equals("eng")) {
             map = mapENG.getMap();
         }
     }

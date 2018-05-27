@@ -1,28 +1,30 @@
 /**
  * Класс конвертирующий текст в код
  */
-
 package controllers.converter;
+
+import controllers.output.IPrinter;
 import model.CodeMortheMapRUS;
-import controllers.output.Printer;
 import java.util.Map;
 
-public class ToCode {
+public class ToCode implements IToCodeConverter {
 
+    private final IPrinter printer;
     private final CodeMortheMapRUS mapRUS;
-    private static String code;
 
-    public ToCode(final CodeMortheMapRUS mapRUS) {
+    public ToCode(final IPrinter printer, final CodeMortheMapRUS mapRUS) {
+        this.printer = printer;
         this.mapRUS = mapRUS;
     }
 
+    @Override
     public void converterFromTextToCode(final char[] text) {
-        Map<Character, String> map = mapRUS.getMap();
+        final Map<Character, String> map = mapRUS.getMap();
 
+        String code = "";
         for (char i : text) {
             code += (map.get(i) + " ");
         }
-        Printer printer = new Printer();
         printer.printer(code);
     }
 }

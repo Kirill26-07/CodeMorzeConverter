@@ -32,7 +32,7 @@ public class InputCode {
         printer.printer("Input your code in space:\n Используйте пробел для резделения кода!\n Используйте символ | для разделения слов!");
         String[] inputCode = bufferedReader.readLine().split(" ");
         bufferedReader.close();
-        toText.converterFromCodeToText(inputCode);
+        toText.converterFromCodeToText(inputCode, lang);
     }
 
     private void wrongInput(final String lang) throws IOException {

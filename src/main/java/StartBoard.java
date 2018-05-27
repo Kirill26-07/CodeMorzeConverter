@@ -11,10 +11,14 @@ public class StartBoard implements ISimpleBoard{
 
     private final IReader input;
     private final IPrinter output;
+    private final InputText inputText;
+    private final InputCode inputCode;
 
-    public StartBoard(final IReader input, final IPrinter output) {
+    public StartBoard(final IReader input, final IPrinter output, InputText inputText, InputCode inputCode) {
         this.input = input;
         this.output = output;
+        this.inputText = inputText;
+        this.inputCode = inputCode;
     }
 
     final public void startConverting() throws IOException {
@@ -27,12 +31,10 @@ public class StartBoard implements ISimpleBoard{
 
          switch (youChoice) {
              case TEXT_INPUT: {
-                 final InputText inputText = new InputText(converter);
                  inputText.inputYouText();
                  break;
              }
              case CODE_INPUT: {
-                 final InputCode inputCode = new InputCode(printer, reader, toText);
                  inputCode.inputYouCode();
                  break;
              }
