@@ -43,7 +43,6 @@ public class CodeMortheMapENG {
         }
 
      public HashMap<Character, String> getMap() {
-        new CodeMortheMapENG();
         return map;
       }
     }

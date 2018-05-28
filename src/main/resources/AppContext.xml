@@ -13,25 +13,24 @@
         <constructor-arg index="3" ref="inputCode"/>
     </bean>
 
-    <bean id="inputText" class="controllers.InputText">
+    <bean id="inputText" class="controllers.InputText" depends-on="toCode">
         <constructor-arg index="0" ref="toCode"/>
         <constructor-arg index="1" ref="printer"/>
     </bean>
 
-    <bean id="inputCode" class="controllers.InputCode">
+    <bean id="inputCode" class="controllers.InputCode" depends-on="toText">
         <constructor-arg index="0" ref="printer"/>
         <constructor-arg index="1" ref="reader"/>
         <constructor-arg index="2" ref="toText"/>
     </bean>
 
-    <bean id="toCode" class="controllers.converter.ToCode">
-        <constructor-arg index="0" ref="printer"/>
-        <constructor-arg index="1" ref="mapRUS"/>
+    <bean id="converter" abstract="true">
+        <constructor-arg ref="mapRUS"/>
+        <constructor-arg ref="mapENG"/>
+        <constructor-arg ref="printer"/>
     </bean>
 
-    <bean id="toText" class="controllers.converter.ToText">
-        <constructor-arg index="0" ref="mapRUS"/>
-        <constructor-arg index="1" ref="mapENG"/>
-        <constructor-arg index="2" ref="printer"/>
-    </bean>
+    <bean parent="converter" id="toCode" class="controllers.converter.ToCode" depends-on="mapRUS, mapENG"/>
+    <bean parent="converter" id="toText" class="controllers.converter.ToText" depends-on="mapRUS, mapENG"/>
+
 </beans>

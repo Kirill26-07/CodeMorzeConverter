@@ -4,17 +4,14 @@
 package controllers.converter;
 
 import controllers.output.IPrinter;
+import model.CodeMortheMapENG;
 import model.CodeMortheMapRUS;
 import java.util.Map;
 
-public class ToCode implements IToCodeConverter {
+public class ToCode extends Converter implements IToCodeConverter {
 
-    private final IPrinter printer;
-    private final CodeMortheMapRUS mapRUS;
-
-    public ToCode(final IPrinter printer, final CodeMortheMapRUS mapRUS) {
-        this.printer = printer;
-        this.mapRUS = mapRUS;
+    public ToCode(final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
+        super(mapRUS, mapENG, printer);
     }
 
     @Override

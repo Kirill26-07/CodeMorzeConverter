@@ -10,18 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class ToText implements IToTextConverter {
+public class ToText extends Converter implements IToTextConverter {
 
-    private final CodeMortheMapRUS mapRUS;
-    private final CodeMortheMapENG mapENG;
-    private final IPrinter printer;
-
-    private HashMap<Character, String> map = new HashMap<>();
 
     public ToText(final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
-        this.mapRUS = mapRUS;
-        this.mapENG = mapENG;
-        this.printer = printer;
+        super(mapRUS, mapENG, printer);
     }
 
     @Override
@@ -39,13 +32,5 @@ public class ToText implements IToTextConverter {
            }
         }
         printer.printer(text);
-    }
-
-    private void getLangMap(final String lang){
-        if (lang.equals("rus")) {
-            map = mapRUS.getMap();
-        } else if (lang.equals("eng")) {
-            map = mapENG.getMap();
-        }
     }
 }

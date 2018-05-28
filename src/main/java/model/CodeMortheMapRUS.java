@@ -10,8 +10,8 @@ public class CodeMortheMapRUS {
      private static HashMap<Character, String> map = new HashMap<>();
 
      private CodeMortheMapRUS() {
-            // Строчные буквы RUS
 
+            // Строчные буквы RUS
             map.put('а', ".-");
             map.put('в', ".--");
             map.put('г', "--.");
@@ -58,7 +58,6 @@ public class CodeMortheMapRUS {
         }
 
       public HashMap<Character, String> getMap() {
-        new CodeMortheMapRUS();
         return map;
       }
     }
