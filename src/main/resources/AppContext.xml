@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
 
     <import resource="IOContext.xml"/>
     <import resource="CodMapContext.xml"/>
@@ -24,7 +25,7 @@
         <constructor-arg index="2" ref="toText"/>
     </bean>
 
-    <bean id="converter" abstract="true">
+    <bean id="converter" class="controllers.converter.Converter">
         <constructor-arg ref="mapRUS"/>
         <constructor-arg ref="mapENG"/>
         <constructor-arg ref="printer"/>

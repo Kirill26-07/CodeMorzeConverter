@@ -4,16 +4,14 @@
 package controllers.converter;
 
 import controllers.output.IPrinter;
-import model.CodeMortheMapENG;
-import model.CodeMortheMapRUS;
-import java.util.HashMap;
+import model.ICodeMortheMap;
+
 import java.util.Map;
 import java.util.Set;
 
 public class ToText extends Converter implements IToTextConverter {
 
-
-    public ToText(final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
+    public ToText(final ICodeMortheMap mapRUS, final ICodeMortheMap mapENG, final IPrinter printer) {
         super(mapRUS, mapENG, printer);
     }
 

@@ -4,13 +4,13 @@
 package model;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class CodeMortheMapRUS {
+public class CodeMortheMapRUS implements ICodeMortheMap {
 
-     private static HashMap<Character, String> map = new HashMap<>();
+       private static Map<Character, String> map = new HashMap<>();
 
-     private CodeMortheMapRUS() {
-
+       private CodeMortheMapRUS() {
             // Строчные буквы RUS
             map.put('а', ".-");
             map.put('в', ".--");
@@ -44,7 +44,6 @@ public class CodeMortheMapRUS {
             map.put('я', ".-.-");
 
             // Cимволы
-
             map.put('.', "......");
             map.put(',', ".-.-.-");
             map.put(';', "-.-.-.");
@@ -57,8 +56,10 @@ public class CodeMortheMapRUS {
 
         }
 
-      public HashMap<Character, String> getMap() {
-        return map;
-      }
-    }
+        @Override
+        public Map<Character, String> getMap() {
+            return map;
+
+       }
+}
 

@@ -1,18 +1,18 @@
 package controllers.converter;
 
 import controllers.output.IPrinter;
-import model.CodeMortheMapENG;
-import model.CodeMortheMapRUS;
+import model.ICodeMortheMap;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Converter {
 
-    protected final CodeMortheMapRUS mapRUS;
-    protected final CodeMortheMapENG mapENG;
+    protected final ICodeMortheMap mapRUS;
+    protected final ICodeMortheMap mapENG;
     protected final IPrinter printer;
-    protected HashMap<Character, String> map = new HashMap<>();
+    protected Map<Character, String> map = new HashMap<>();
 
-    public Converter(final CodeMortheMapRUS mapRUS, final CodeMortheMapENG mapENG, final IPrinter printer) {
+    public Converter(final ICodeMortheMap mapRUS, final ICodeMortheMap mapENG, final IPrinter printer) {
         this.mapRUS = mapRUS;
         this.mapENG = mapENG;
         this.printer = printer;

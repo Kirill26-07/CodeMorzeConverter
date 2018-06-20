@@ -4,14 +4,14 @@
 package model;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class CodeMortheMapENG {
+public class CodeMortheMapENG implements ICodeMortheMap {
 
-     private static HashMap<Character, String> map = new HashMap<>();
+        private static Map<Character, String> map = new HashMap<>();
 
-     private CodeMortheMapENG() {
+        private CodeMortheMapENG() {
             // Строчные буквы ENG                  // Cимволы
-
             map.put('a', ".-");             map.put('.', "......");
             map.put('b', ".--");            map.put(',', ".-.-.-");
             map.put('c', "--.");            map.put(';', "-.-.-.");
@@ -42,7 +42,8 @@ public class CodeMortheMapENG {
 
         }
 
-     public HashMap<Character, String> getMap() {
+        @Override
+        public Map<Character, String> getMap() {
         return map;
       }
     }
